@@ -1,0 +1,28 @@
+
+@import '../../../../../dev/scss/core';
+
+.tstapp-priv-toolbar {
+    display: block;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: $tstappvar-color--teal;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.tstapp-priv-link {
+    color: #fff;
+    padding: 0px 20px;
+    display: inline-block;
+}
+
+.tstapp-priv-logo {
+    color: #fff;
+}
+
+.tstapp-priv-title {
+    white-space: nowrap;
+    color: #fff;
+}

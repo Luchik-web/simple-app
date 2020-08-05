@@ -1,0 +1,53 @@
+<div class="content tstapp-core-layout" role="main">
+    <h1>Task</h1>
+
+    <ol>
+        <li class="tstapp-priv-task-item">Make the page full height. The footer have to be in the bottom of the page (like on this page when content takes more then 100% of height)</li>
+        <li class="tstapp-priv-task-item">
+            Add organisation Model (see User model as example). Organisation consist of fields:
+            <table width="100%">
+                <tr>
+                    <th>Field name</th>
+                    <th>Type</th>
+                    <th>Restrictions</th>
+                    <th>Required</th>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td>string</td>
+                    <td>limit 250 characters</td>
+                    <td>true</td>
+                </tr>
+                <tr>
+                    <td>description</td>
+                    <td>text</td>
+                    <td>limit 2000 characters</td>
+                    <td>false</td>
+                </tr>
+                <tr>
+                    <td>icon_url</td>
+                    <td>string</td>
+                    <td>-</td>
+                    <td>yes</td>
+                </tr>
+                <tr>
+                    <td>background_image_url</td>
+                    <td>string</td>
+                    <td>-</td>
+                    <td>yes</td>
+                </tr>
+            </table>
+            Use UI interface/abstract as for User Form
+        </li>
+        <li class="tstapp-priv-task-item">Add organisation preview page
+            <div role="presentation" class="tstappm-width--full tstappm-text--center">
+                <img alt="sample task" src="/assets/images/globals/test-task/org-profile.png" style="max-width: 500px;">
+            </div>
+        </li>
+    </ol>
+
+    <p>Please note, the BEM (Block Element Modifier) methodology is used for styling (don't check default about page styling)</p>
+    <p>The design should be mobile responsive</p>
+    <p>For processing the application logic core services should be used (see UserCoreService as example)</p>
+    <p>For requests JSON files from folder <code>src&#47;assets&#47;test-data&#47;</code> is used. File name can be checked in <code>src&#47;app&#47;core&#47;config&#47;route-end-points-config.ts</code>, for example for user with <code>ID = 1</code> file <code>src&#47;assets&#47;test-data&#47;user_1.json</code> will be used</p>
+</div>

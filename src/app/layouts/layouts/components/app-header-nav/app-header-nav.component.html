@@ -1,0 +1,33 @@
+<div class="tstapp-priv-toolbar" role="banner">
+    <div role="presentation" class="tstapp-core-layout">
+        <a routerLink="/s/about" role="group" fxLayout="row"  fxLayout.gt-sm="row" fxLayoutGap="20px" fxFlex="initial"
+            aria-label="About" >
+            <div role="groupcell" fxFlex class="tstapp-priv-logo">
+                <mat-icon svgIcon="tstappi/global/ui/logos/logo.svg" class="tstapp-icon"></mat-icon>
+            </div>
+            <div role="groupcell" fxFlex >
+                <span class="tstapp-priv-title" role="heading" aria-level="1">Test Me</span>
+            </div>
+        </a>
+
+        <div role="separator" class="tstappm-spacer"></div>
+
+        <div role="group" fxLayout="row"  fxLayout.gt-sm="row" fxFlex="initial">
+            <div role="groupcell" fxFlex>
+                <a routerLink="/s/task" aria-label="Test task" class="tstapp-priv-link" title="Test task">
+                    <mat-icon svgIcon="tstappi/challenge.svg" class="tstapp-icon"></mat-icon>
+                </a>
+            </div>
+            <div role="groupcell" fxFlex>
+                <a routerLink="/users/me" aria-label="View User" class="tstapp-priv-link" title="View User">
+                    <mat-icon svgIcon="tstappi/user.svg" class="tstapp-icon"></mat-icon>
+                </a>
+            </div>
+            <div role="groupcell" fxFlex>
+                <a routerLink="/orgnisations/me" aria-label="View Organisation" class="tstapp-priv-link" title="View Organisation">
+                    <mat-icon svgIcon="tstappi/container.svg" class="tstapp-icon"></mat-icon>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

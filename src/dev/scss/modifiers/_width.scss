@@ -1,0 +1,15 @@
+
+/**
+ * .tstappm-width--full
+ */
+.tstappm-width {
+
+    &--full {
+        width: 100%;
+    }
+
+    &--max-full {
+        max-width: 100%;
+    }
+
+}

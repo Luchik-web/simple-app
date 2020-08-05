@@ -1,0 +1,92 @@
+/**
+ * .tstapp-alert
+ * Example:
+ * ```
+<div role="alert" class="tstapp-alert tstapp-alert--info">
+    <div role="heading" class="tstapp-alert__title" >
+        I'm an alert'
+    </div>
+    <div role="presentation" class="tstapp-alert__iconsclose"></div>
+</div>
+ * ```
+ */
+
+// Imports styles for inner wrapper classes:
+// &__header - for header
+// &__content - for other content
+@mixin tstapp-component-alert-mixin(
+    $modifiers-list: success message info warning error
+) {
+    //font-weight: normal;
+    //font-style: normal;
+    border-width: $tstappvar-alert-base-border-width;
+    border-style: $tstappvar-alert-base-border-style;
+    border-radius: $tstappvar-alert-base-border-radius;
+    display: block;
+    margin-top: 13px;
+    margin-bottom: 13px;
+    padding: 20px 23px;
+    position: relative;
+
+    @each $modifier in $modifiers-list {
+        // $i: index($colors-list, $color);
+        //&--#{$modifiers} {}
+        @if $modifier == success {
+            &--success {
+                background-color: $tstappvar-color--teal-light;
+                border-color: $tstappvar-color--teal-dark;
+                color: $tstappvar-color--teal-dark;
+            }
+        } @else if $modifier == message {
+            &--message {
+                background-color: $tstappvar-color--white;
+                box-shadow: 0 1px 4px 0 rgba(143, 140, 140, 0.5);
+                border: none;
+                margin: 4px 17px;
+                padding: 15px 35px;
+                @include tstapp-mixin-max-breakpoint(xs) {
+                    margin: 17px 0;
+                }
+            }
+        } @else if $modifier == info {
+            &--info {
+                background-color: $tstappvar-alert-info-background-color;
+                border-color: $tstappvar-alert-info-border-color;
+                color: $tstappvar-alert-info-color;
+            }
+        } @else if $modifier == warning {
+            &--warning {
+                background-color: $tstappvar-alert-warning-background-color;
+                border-color: $tstappvar-alert-warning-border-color;
+                color: $tstappvar-alert-warning-color;
+            }
+        } @else if $modifier == error {
+            &--error {
+                background-color: $tstappvar-alert-error-background-color;
+                border-color: $tstappvar-alert-error-border-color;
+                color: $tstappvar-alert-error-color;
+            }
+        }
+    }
+
+    @at-root #{&}__title {
+        @include tstapp-font-size(30);
+        font-family: $tstappvar-typography-font-family--headline;
+        padding: 0;
+        margin: 0;
+        display: block;
+    }
+
+    @at-root #{&}__message {
+        @include tstapp-font-size(20);
+        padding: 0;
+        margin: 0;
+        display: block;
+        font-family: Barlow, sans-serif;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: underline;
+    }
+}

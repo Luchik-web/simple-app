@@ -1,0 +1,82 @@
+
+// Set absolute position and styling
+//
+// @param top|bottom $top-bottom-direction Top/Bottom position direction
+// @param any $top-bottom-value Top/Bottom position in pixels
+// @param left|right $left-right-direction Left/Right position direction
+// @param any $left-right-value Left/Right position in pixels
+//
+// @example
+// ```
+//      @import '../../../../../dev/scss/core';
+//
+//      // Result:
+//      // {
+//      //     position: absolute;
+//      //     top: 10px; bottom: auto;
+//      //     left: auto; right: 10px;
+//      // }
+//      .block-0 {
+//          @include tstapp-position-absolute;
+//      }
+//
+//      // Set position to top/right `10px 20px` + add the additional styles
+//      // Result:
+//      // {
+//      //     position: absolute;
+//      //     top: auto; bottom: 15px;
+//      //     left: 20px; right: auto;
+//      //     height: 40px; width: 10px;
+//      // }
+//      .block-1 {
+//          @include tstapp-position-absolute(bottom, 15px, left, 20px) {
+//              height: 40px;
+//              width: 10px;
+//          }
+//      }
+//
+//      // Rewrite default position from `top` to `bottom` and from right `10px` to right `40px`
+//      // Result:
+//      // {
+//      //     position: absolute;
+//      //     top: auto; bottom: 10px;
+//      //     left: auto; right: 40px;
+//      // }
+//      .block-2 {
+//          @include tstapp-position-absolute($top-bottom-direction: bottom, $left-right-value: 40px);
+//      }
+// ```
+@mixin tstapp-position-absolute(
+    $top-bottom-direction: top,
+    $top-bottom-value: 10px,
+    $left-right-direction: right,
+    $left-right-value: 10px,
+) {
+    position: absolute;
+
+    @if $top-bottom-direction == top {
+        top: $top-bottom-value;
+        bottom: auto;
+    } @else if $top-bottom-direction == bottom {
+        top: auto;
+        bottom: $top-bottom-value;
+    } @else {
+        top: auto;
+        bottom: auto;
+        @error "Unknown top-bottom direction `#{$top-bottom-direction}`. Should be one of `top`|`bottom`";
+    }
+
+    @if $left-right-direction == left {
+        left: $left-right-value;
+        right: auto;
+    } @else if $left-right-direction == right {
+        left: auto;
+        right: $left-right-value;
+    } @else {
+        left: auto;
+        right: auto;
+        @error "Unknown left-right direction `#{$left-right-direction}`. Should be one of `left`|`right`";
+    }
+
+    @content;
+}

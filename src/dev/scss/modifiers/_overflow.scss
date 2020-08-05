@@ -1,0 +1,10 @@
+// tstappm-overflow--hidden
+
+.tstappm-overflow {
+    &--hidden {
+        overflow: hidden;
+    }
+    &--visible {
+        overflow: visible !important;
+    }
+}

@@ -1,0 +1,24 @@
+/**
+ * Utils loader
+ */
+
+// Functions
+@import "functions/sizes";
+@import "functions/calc";
+
+// Config ----------
+@import "config/config";
+
+// Mixins ----------
+@import "mixins/breakpoint";
+@import "mixins/sizes";
+@import "mixins/align";
+@import "mixins/placeholder";
+@import "mixins/bg-color";
+@import "mixins/position";
+@import "mixins/fetch-styles";
+@import "mixins/text-in-line";
+
+// Utils ----------
+@import "utils/clearfix";
+@import "utils/shadow";

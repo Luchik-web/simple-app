@@ -1,0 +1,40 @@
+
+/**
+ * .tstappm-mb--
+ */
+.tstappm {
+
+    &--mt-5 {
+        margin-top: 5px;
+    }
+    &--mt-15 {
+        margin-top: 15px!important;
+    }
+    &--mt-30 {
+        margin-top: 30px;
+    }
+    &--mb-10 {
+        margin-bottom: 10px;
+    }
+    &--mb-20 {
+        margin-bottom: 20px;
+    }
+    &--mb-30 {
+        margin-bottom: 30px;
+    }
+    &--mb-35 {
+        margin-bottom: 25px;
+    }
+    &--mt-50 {
+        margin-top: 50px;
+    }
+    &--ml-20 {
+        margin-left: 20px;
+    }
+    &--ml-10 {
+        margin-left: 10px;
+    }
+    &--mr-10 {
+        margin-right: 10px;
+    }
+}

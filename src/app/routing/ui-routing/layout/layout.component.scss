@@ -1,0 +1,36 @@
+
+@import "../../../../dev/scss/core";
+
+.tstapp-ui-layout {
+    flex-direction: row;
+    box-sizing: border-box;
+    display: flex;
+
+    @include tstapp-mixin-max-breakpoint(sm) {
+        flex-direction: column;
+    }
+}
+
+.tstapp-ui-layout-asside {
+    flex: 1 1 300px;
+    box-sizing: border-box;
+    display: block;
+    max-width: 300px;
+    min-width: 300px;
+
+    @include tstapp-mixin-max-breakpoint(sm) {
+        flex: 1 1 100%;
+        max-height: 100%;
+        max-width: 100%;
+    }
+}
+
+.tstapp-ui-layout-main {
+    flex: 1 1 auto;
+    box-sizing: border-box;
+
+    @include tstapp-mixin-max-breakpoint(sm) {
+        flex: 1 1 100%;
+        max-height: 100%;
+    }
+}

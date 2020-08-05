@@ -1,0 +1,35 @@
+@import "../../../../../dev/scss/core";
+
+.dvgd-nav {
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: $tstappvar-box-shadow;
+    width: 100%;
+    display: block;
+}
+
+.dvgd-nav-main {
+    list-style: none;
+    padding-left: 0;
+}
+
+.dvgd-nav-main--sublevel {
+    padding-left: 20px;
+}
+
+.dvgd-nav-main__item {
+    border-top: 1px solid #eee;
+}
+
+.dvgd-nav-main__item-link, .dvgd-nav-main__item-text {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    display: block;
+}
+
+.dvgd-nav-main__item-link {
+    color: inherit;
+}
+.dvgd-nav-main__item-link:visited {
+    color: inherit;
+}

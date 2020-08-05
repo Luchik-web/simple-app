@@ -1,0 +1,10 @@
+
+// Calculates the value with calc
+//
+// @param {width} $width The width we are working with
+// @param {width} $margin-left Left margin
+// @param {width} $margin-right Right margin
+// @return {width}
+@function tstapp-fn-calc-width($width: 100%, $margin-left: 0px, $margin-right: 0px) {
+    @return calc(#{$width} - #{$margin-left} - #{$margin-right});
+}

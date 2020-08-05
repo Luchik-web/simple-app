@@ -1,0 +1,92 @@
+<form #form name="userForm" fxLayout="column"
+    [formGroup]="userForm"
+    (ngSubmit)="onSubmitForm()"
+    class="tstapp-priv-form">
+    <div role="group" fxLayout="column" fxLayout.gt-xs="row" fxLayoutGap="20px" fxLayoutGap.xs="10px">
+        <div fxFlex="auto" role="groupcell">
+            <mat-form-field floatLabel="always" appearance="outline" fxFlex>
+                <mat-label>First name</mat-label>
+                <input matInput formControlName="first_name"
+                    placeholder="Enter the first name" aria-label="first name"
+                    class="doit-form-field" type="text" />
+                <mat-error *ngIf="userForm.get('first_name').invalid">
+                    <span role="alert" *ngIf="userForm.get('first_name').errors.required">
+                        First Name is required
+                    </span>
+                    <span role="alert" *ngIf="userForm.get('first_name').hasError('maxlength')">
+                        First Name is too long
+                    </span>
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <div  fxFlex="auto" role="groupcell">
+            <mat-form-field floatLabel="always" appearance="outline" fxFlex>
+                <mat-label>Last name</mat-label>
+                <input matInput formControlName="last_name"
+                    placeholder="Enter the first name" aria-label="first name"
+                    class="doit-form-field" type="text" />
+                <mat-error *ngIf="userForm.get('last_name').invalid">
+                    <span role="alert" *ngIf="userForm.get('last_name').errors.required">
+                        Last Name is required
+                    </span>
+                    <span role="alert" *ngIf="userForm.get('last_name').hasError('maxlength')">
+                        Last Name is too long
+                    </span>
+                </mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <mat-form-field floatLabel="always" appearance="outline" fxFlex>
+        <mat-label>User image</mat-label>
+        <input matInput formControlName="icon_url"
+            placeholder="Enter the first name" aria-label="first name"
+            class="doit-form-field" type="text" />
+        <mat-error *ngIf="userForm.get('icon_url').invalid">
+            <span role="alert" *ngIf="userForm.get('icon_url').errors.required">
+                User image is required
+            </span>
+            <span role="alert" *ngIf="userForm.get('icon_url').hasError('maxlength')">
+                User image is too long
+            </span>
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="doit-form-field" appearance="outline">
+        <mat-label>Description</mat-label>
+        <textarea matInput name="description" formControlName="description"
+            name="description"></textarea>
+        <mat-error *ngIf="userForm.get('description').invalid">
+            <span role="alert" *ngIf="userForm.get('description').errors.maxlength">
+                The Description is too long
+            </span>
+        </mat-error>
+        <mat-error *ngIf="userForm.get('description').invalid">
+            <span *ngIf="userForm.get('description').errors?.required" role="alert">
+                Description is required and can't be empty
+            </span>
+        </mat-error>
+    </mat-form-field>
+
+    <section class="tstapp-priv-alert tstapp-priv-alert--error" *ngIf="formErrors?.length">
+        <div role="alert" class="tstapp-priv-alert__title" >
+            Something was wrong...
+        </div>
+        <div role="alert" class="tstapp-priv-alert__message" >
+            <ng-container *ngFor="let option of formErrors">
+                <p>{{option}}</p>
+            </ng-container>
+        </div>
+    </section>
+
+    <div class="doitm--mt-50" name="create" role="button"
+            fxLayout fxLayoutAlign="end center">
+        <button mat-btn mat-raised-button name="submit" class="doit-btn doitm-text--uppercase"
+            color="accent" type="submit" aria-label="Save user"
+            [disabled]="!userForm.dirty">
+            <ng-container *ngIf="initialData?.id; else userManageUserFormBtnElseID">Update</ng-container>
+            <ng-template #userManageUserFormBtnElseID>Create</ng-template>
+        </button>
+    </div>
+</form>

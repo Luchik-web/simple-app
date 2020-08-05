@@ -1,0 +1,112 @@
+/*
+ * Apply a natural box layout model to all elements, but allowing components to change
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ */
+
+html, body {
+    font-family: $tstappvar-typography-normal-font-family;
+    font-size: $tstappvar-typography-normal-font-size;
+    line-height: $tstappvar-typography-line-height--base;
+    color: $tstappvar-typography-normal-color;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    @include tstapp-mixin-max-breakpoint(sm) {
+        font-size: $tstappvar-typography-normal-font-size - 2;
+    }
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+body {
+    cursor: default;
+}
+
+a {
+    color: $tstappvar-color--grey-medium;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover,
+        &:focus {
+        color: $tstappvar-color--grey-charcoal;
+    }
+}
+
+p {
+
+    margin: 16px 0;
+
+}
+
+// Reset fonts for relevant elements
+input,
+button,
+select,
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+textarea, input {
+    &::-ms-clear {
+        display: none;
+    }
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+textarea {
+    resize: vertical;
+}
+
+img {
+    max-width: 100%;;
+}
+
+input, textarea, select {
+    @include tstapp-placeholder($tstappvar-form-placeholder-color);
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    display: block;
+}
+
+pre.tstappm-code {
+    line-height: normal;
+}
+code {
+    font-size: 12px;
+    line-height: normal;
+}
+svg {
+    background: transparent;
+}

@@ -1,0 +1,52 @@
+@import "../core";
+
+// @example
+//  ```
+// @import '../../../../../dev/scss/core';
+// @import '../../../../../dev/scss/components/mixins/icon';
+// .i1 {
+//     @include tstapp-bg-img-mixin(lg, lg);
+// }
+// // Rewrite only predefine params
+// .i2 {
+//     @include tstapp-bg-img-mixin($top-bottom-direction: bottom, $left-right-value: 40px);
+//  }
+//  ```
+//
+
+@mixin tstapp-bg-img-mixin (
+    $bg-size: cover,
+    $width: null,
+    $height: null,
+    $position: center,
+    $bg-color: null,
+    $noimg-bg-size: 50% auto,
+    $noimg-bg-url: null,
+    $noimg-bg-color: null,
+) {
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: $position;
+    background-size: $bg-size;
+
+    @if $width == null {
+        width: 100%;
+    } @else {
+        width: $width;
+    }
+    @if $height == null {
+        height: 100%;
+    } @else {
+        height: $height;
+    }
+
+    &--noimg {
+        background-size: $noimg-bg-size;
+        @if $noimg-bg-url != null {
+            background-image: $noimg-bg-url;
+        }
+        @if $noimg-bg-color != null {
+            background-color: $noimg-bg-color;
+        }
+    }
+}

@@ -1,0 +1,147 @@
+/**
+ * Common
+ */
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Colors
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// colors
+$tstappvar-color--grey-charcoal: #38393a;
+$tstappvar-color--grey-medium: #8D9995;
+$tstappvar-color--grey-dark: #696b6b;
+$tstappvar-color--tomato: #db3c30;
+$tstappvar-color--tomato-red: #f81c00;
+$tstappvar-color--teal: #009d8b;
+$tstappvar-color--ice-blue: #eef2f4;;
+$tstappvar-color--white: #fff;
+$tstappvar-color--purple-dark: #1f0f4c;
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Boxes
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+$tstappvar-box-shadow: 0 1px 4px 0 rgba(143, 140, 140, 0.5);
+// Radius
+$tstappvar-common-border-radius-default: 6px;
+// Borders
+$tstappvar-common-border-color-default: $tstappvar-color--ice-blue;
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Forms
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+$tstappvar-form-header-color: $tstappvar-color--grey-charcoal;
+$tstappvar-form-label-color: $tstappvar-color--grey-charcoal;
+$tstappvar-form-placeholder-color: $tstappvar-color--grey-medium;
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Layout
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+$tstappvar-screen--max-width: 960px;
+$tstappvar-screen--media-xs: 600px;
+$tstappvar-screen--media-sm: 770px;
+$tstappvar-screen--media-md: 960px;
+// Material sizes. Can't ovverwrite them from mat config
+//         xs       sm       lg       xl
+// 0px     600px    960px    1280px   1920px
+$tstappvar-screen--media-breakpoints: (
+'xs': $tstappvar-screen--media-xs,
+'sm': $tstappvar-screen--media-sm,
+'md': $tstappvar-screen--media-md,
+'lg': $tstappvar-screen--max-width,
+'screen': $tstappvar-screen--max-width
+);
+
+$tstappvar-layout-base-background-color: #fff;
+$tstappvar-layout-top-menu-color: #f7f8fa;
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Fonts/typography
+// base, h1, h2, h3, menu, submenu
+// - font-size
+// - font-family
+// - line-height
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Font Family
+$tstappvar-typography-font-family--base: sans-serif;
+$tstappvar-typography-font-family--headline: sans-serif;
+$tstappvar-typography-font-family--footer: sans-serif;
+$tstappvar-typography-font-family--btn: sans-serif;
+
+// Font Sizes
+$tstappvar-typography-font-size--base-px: 18;
+
+$tstappvar-typography-font-size--base: $tstappvar-typography-font-size--base-px * 1px;
+$tstappvar-typography-font-size--h1: tstapp-size-pc(40, $tstappvar-typography-font-size--base-px);
+$tstappvar-typography-font-size--h2: tstapp-size-pc(28, $tstappvar-typography-font-size--base-px);
+$tstappvar-typography-font-size--h3: tstapp-size-pc(32, $tstappvar-typography-font-size--base-px);
+
+$tstappvar-typography-line-height--base: 1.5;
+
+// Base
+$tstappvar-typography-normal-color: $tstappvar-color--grey-charcoal;
+$tstappvar-typography-normal-font-family: $tstappvar-typography-font-family--base;
+$tstappvar-typography-normal-font-size: $tstappvar-typography-font-size--base;
+$tstappvar-typography-normal-font-style: normal;
+$tstappvar-typography-normal-font-weight: normal;
+
+// h1
+$tstappvar-typography-h1-color: $tstappvar-color--grey-dark;
+$tstappvar-typography-h1-font-family: $tstappvar-typography-font-family--headline;
+$tstappvar-typography-h1-font-size: $tstappvar-typography-font-size--h1;
+$tstappvar-typography-h1-font-style: normal;
+$tstappvar-typography-h1-font-weight: bold;
+
+// h2
+$tstappvar-typography-h2-color: $tstappvar-color--grey-dark;
+$tstappvar-typography-h2-font-family: $tstappvar-typography-font-family--headline;
+$tstappvar-typography-h2-font-size: $tstappvar-typography-font-size--h2;
+$tstappvar-typography-h2-font-style: normal;
+$tstappvar-typography-h2-font-weight: bold;
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Alert Info message
+// Common:
+// - border-radius
+// - border-style
+// - border-width
+// Custom (info, success, warning, error):
+// - color
+// - background-color
+// - border-color
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Common
+$tstappvar-alert-base-border-radius: 4px;
+$tstappvar-alert-base-border-style: solid;
+$tstappvar-alert-base-border-width: 1px;
+// Succcess
+$tstappvar-alert-success-color: #926400;
+$tstappvar-alert-success-background-color: #ffe6b0;
+$tstappvar-alert-success-border-color: #eda200;
+// Info
+$tstappvar-alert-info-color: #926400;
+$tstappvar-alert-info-background-color: #ffe6b0;
+$tstappvar-alert-info-border-color: #eda200;
+// Warnings
+$tstappvar-alert-warning-color: #926400;
+$tstappvar-alert-warning-background-color: #ffe6b0;
+$tstappvar-alert-warning-border-color: #eda200;
+// Error
+$tstappvar-alert-error-color: #f44336;
+$tstappvar-alert-error-background-color: #eed2ce;
+$tstappvar-alert-error-border-color: #f44336;
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Form elements
+// Buttons:
+// - border-radius
+// Forms:
+// - max-width
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Buttons
+
+$tstappvar-form-control-border-radius: 4px;
+$tstappvar-button-base-border-radius: $tstappvar-common-border-radius-default;
+$tstappvar-form--max-width: 816px;
+

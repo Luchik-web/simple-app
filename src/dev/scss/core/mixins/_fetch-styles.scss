@@ -1,0 +1,11 @@
+// Fetch styles list
+
+@mixin tstapp-fetch-styles($styles-list) {
+    @if $styles-list != null  {
+        @each $property, $value in $styles-list {
+            @if $value {
+                #{$property}: $value;
+            }
+        }
+    }
+}

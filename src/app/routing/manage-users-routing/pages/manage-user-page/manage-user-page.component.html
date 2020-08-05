@@ -1,0 +1,8 @@
+<section class="tstapp-core-layout">
+    <h1>Manage user</h1>
+
+    <app-modules-user-manage-user-form
+        [initialData]="user"
+        (whenChanged)="onWhenUserChanged($event)"
+    ></app-modules-user-manage-user-form>
+</section>

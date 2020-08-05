@@ -1,0 +1,38 @@
+@import "../../../../../dev/scss/core";
+@import "../../../../../dev/scss/components/bg-img-mixins";
+
+.tstapp-priv-banner {
+    padding: 10px;
+    border-radius: $tstappvar-common-border-radius-default;
+    border-color: $tstappvar-common-border-color-default;
+    border-style: solid;
+    border-width: 1px;
+    margin: 0px 3px 10px 3px;
+    box-shadow: $tstappvar-box-shadow;
+    position: relative;
+
+    &__avatar {
+        @include tstapp-bg-img-mixin(
+            $bg-size: contain,
+            $width: 200px,
+            $height: 200px,
+        );
+    }
+    &__title {
+        @include tstapp-font-size(24);
+    }
+
+    &__description {
+
+    }
+
+    &__edit {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+}
+
+.tstapp-priv-banner-section {
+    padding: 10px;
+}

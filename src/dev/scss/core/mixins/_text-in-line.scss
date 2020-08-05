@@ -1,0 +1,10 @@
+/**
+ * Text in one line
+ */
+
+@mixin tstapp-text-in-line() {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+

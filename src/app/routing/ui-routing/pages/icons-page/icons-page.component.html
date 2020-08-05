@@ -1,0 +1,95 @@
+<section class="tstapp-priv-ui">
+    <h1 class="tstappm-cursor--pointer"
+        (click)="showControls = !showControls" (keyup)="showControls = !showControls">
+        {{showControls ? 'Hide' : 'Show'}} controls
+    </h1>
+    <section *ngIf="showControls">
+        <h5>Color</h5>
+        <section class="tstapp-priv-ui-colors" role="list">
+            <ng-container *ngFor="let item of colors">
+                <div class="tstapp-priv-ui-color" role="listitem"
+                    (click)="color = item" (keyup)="color = item"
+                    [ngStyle]="{'background-color': item}"
+                    >{{item}}
+                </div>
+            </ng-container>
+        </section>
+
+        <h5>Background Color</h5>
+        <section class="tstapp-priv-ui-colors" role="list">
+            <ng-container *ngFor="let item of bgColors">
+                <div class="tstapp-priv-ui-color" role="listitem"
+                    (click)="bgColor = item" (keyup)="bgColor = item"
+                    [ngStyle]="{'background-color': item}"
+                    >{{item}}
+                </div>
+            </ng-container>
+        </section>
+
+        <h5>Actions</h5>
+        <section class="tstapp-priv-ui-actions">
+            <a class="tstappm-cursor--pointer"
+                (click)="showName = !showName" (keyup)="showName = !showName">
+                {{showName ? 'Hide' : 'Show'}} name
+            </a> | <a class="tstappm-cursor--pointer"
+                (click)="showPath = !showPath" (keyup)="showPath = !showPath">
+                {{showPath ? 'Hide' : 'Show'}} path
+            </a> | <a class="tstappm-cursor--pointer"
+                (click)="copyOnClick = !copyOnClick" (keyup)="copyOnClick = !copyOnClick">
+                {{copyOnClick ? 'Deny' : 'Allow'}} copy {{(!showName && showPath ? 'path' : 'name')}} on click
+            </a>
+        </section>
+    </section>
+
+    <ng-container *ngFor="let section of iconSections">
+        <h2>{{section.dir}}</h2>
+        <h3>SVG files</h3>
+        <section role="list" class="tstapp-priv-ui-icons" [ngStyle]="{ 'color': color }">
+            <ng-container *ngFor="let item of section.svg">
+                <div class="tstapp-priv-ui-icon" role="listitem"
+                    title="{{copyOnClick ? 'Copy ' + (!showName && showPath ? 'path' : 'name') +' to clipboard' : 'tstappi' + section.svgprefix + item}}"
+                    [ngClass]="{'tstappm-cursor--pointer': copyOnClick}"
+                    [ngStyle]="{'background-color': bgColor}"
+                    (click)="copyName(!showName && showPath ? '/assets/images' + section.dir + item : 'tstappi' + section.svgprefix + item)"
+                    (keyup)="copyName(!showName && showPath ? '/assets/images' + section.dir + item : 'tstappi' + section.svgprefix + item)">
+                    <mat-icon svgIcon="tstappi{{section.svgprefix + item}}"></mat-icon>
+                    <div *ngIf="showName" role="presentation">tstappi{{section.svgprefix}}{{item}}</div>
+                    <div *ngIf="showPath" role="presentation" class="tstapp-priv-ui-filepath">/assets/images{{section.dir}}{{item}}</div>
+                </div>
+            </ng-container>
+        </section>
+
+        <h3>PNG files</h3>
+        <section role="list" class="tstapp-priv-ui-icons">
+            <ng-container *ngFor="let item of section.png">
+                <div class="tstapp-priv-ui-icon" role="listitem"
+                    title="{{copyOnClick ? 'Copy path to clipboard' : '/assets/images' + section.dir + item}}"
+                    [ngClass]="{'tstappm-cursor--pointer': copyOnClick}"
+                    [ngStyle]="{'background-color': bgColor}"
+                    (click)="copyName('/assets/images' + section.dir + item)"
+                    (keyup)="copyName('/assets/images' + section.dir + item)" >
+                    <img src="/assets/images{{section.dir}}{{item}}" alt="{{item}}">
+                    <div *ngIf="showName" role="presentation">/assets/images{{item}}</div>
+                    <div *ngIf="showPath" role="presentation" class="tstapp-priv-ui-filepath">/assets/images{{section.dir}}{{item}}</div>
+                </div>
+            </ng-container>
+        </section>
+
+        <h3>GIF files</h3>
+        <section role="list" class="tstapp-priv-ui-icons">
+            <ng-container *ngFor="let item of section.gif">
+                <div class="tstapp-priv-ui-icon" role="listitem"
+                    title="{{copyOnClick ? 'Copy path to clipboard' : '/assets/images' + section.dir + item}}"
+                    [ngClass]="{'tstappm-cursor--pointer': copyOnClick}"
+                    [ngStyle]="{'background-color': bgColor}"
+                    (click)="copyName('/assets/images' + section.dir + item)"
+                    (keyup)="copyName('/assets/images' + section.dir + item)" >
+                    <img src="/assets/images{{section.dir}}{{item}}" alt="{{item}}">
+                    <div *ngIf="showName" role="presentation">/assets/images{{item.dir}}{{item}}</div>
+                    <div *ngIf="showPath" role="presentation" class="tstapp-priv-ui-filepath">/assets/images{{section.dir}}{{item}}</div>
+                </div>
+            </ng-container>
+        </section>
+    </ng-container>
+
+</section>

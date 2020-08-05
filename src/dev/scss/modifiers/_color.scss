@@ -1,0 +1,15 @@
+
+/**
+ * .tstappm-color--red
+ * .tstappm-color--purple
+ */
+.tstappm-color {
+
+    &--red {
+        color: $tstappvar-color--tomato-red;
+    }
+
+    &--purple {
+        color: $tstappvar-color--purple-dark;
+    }
+}

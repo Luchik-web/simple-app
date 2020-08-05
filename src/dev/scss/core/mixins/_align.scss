@@ -1,0 +1,36 @@
+// Creates the font size in %
+
+@mixin tstapp-vertical-align() {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@mixin tstapp-horisontal-align() {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@mixin tstapp-align() {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin tstapp-align--custom(
+    $top: auto,
+    $right: auto,
+    $bottom: auto,
+    $left: auto,
+    $translateX: 0,
+    $translateY: 0,
+) {
+    position: absolute;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+    transform: translate($translateX, $translateY);
+}

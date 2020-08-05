@@ -1,0 +1,26 @@
+/**
+ * Core loader
+ */
+
+@import "core/core";
+@import "material/material-theme";
+@import "material/material-overrides";
+
+@import "layout/normalize";
+@import "layout/base";
+
+@import "layout/page-loader";
+
+@import "modifiers/cursor";
+@import "modifiers/text";
+@import "modifiers/width";
+@import "modifiers/height";
+@import "modifiers/position";
+@import "modifiers/font";
+@import "modifiers/display";
+@import "modifiers/color";
+@import "modifiers/link";
+@import "modifiers/margin";
+@import "modifiers/padding";
+@import "modifiers/overflow";
+@import "modifiers/spacer";

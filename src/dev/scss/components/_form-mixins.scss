@@ -1,0 +1,28 @@
+/**
+ * ```
+ * @include tstapp-component-form-mixin(
+ *   $modifier: md
+ * )
+ * ```
+ */
+@import "../core";
+
+@mixin tstapp-component-form-mixin(
+    $modifier: md
+) {
+    box-sizing: border-box;
+
+    @include tstapp-mixin-max-breakpoint(md) {
+        width: 96%;
+    }
+
+    @if $modifier == md {
+        width: 100%;
+        max-width: $tstappvar-form--max-width;
+        margin-left: auto;
+        margin-right: auto;
+        @include tstapp-mixin-max-breakpoint(md) {
+            width: 96%;
+        }
+    }
+}

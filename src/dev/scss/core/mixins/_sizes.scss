@@ -1,0 +1,9 @@
+
+// Creates the font size in %
+//
+// @param integer size in px
+// @param integer size of parent element in px
+// @return string
+@mixin tstapp-font-size($desired-size-px, $base-size-px: $tstappvar-typography-font-size--base-px) {
+  font-size: tstapp-size-pc($desired-size-px, $base-size-px);
+}

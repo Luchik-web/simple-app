@@ -1,0 +1,6 @@
+@import "../../../../../dev/scss/core";
+@import "../../../../../dev/scss/components/alert-mixins";
+
+.tstapp-priv-alert {
+    @include tstapp-component-alert-mixin(error);
+}

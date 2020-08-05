@@ -1,0 +1,26 @@
+// Calculates em so it could be used everywhere.
+//
+// @param integer (font) size in pixel
+// @param integer reference size in pixel
+// @return string em
+@function tstapp-size-em($desired-size-px, $base-size-px) {
+  @return ($desired-size-px / $base-size-px) * 1em;
+}
+
+// Calculates rem so it could be used everywhere.
+//
+// @param integer font size in pixel
+// @param integer reference size in pixel
+// @return string rem
+@function tstapp-size-rem($desired-size-px, $base-size-px) {
+  @return ($desired-size-px / $base-size-px) * 1rem;
+}
+
+// Calculates percent so it could be used everywhere.
+//
+// @param integer size in pixel
+// @param integer reference size in pixel
+// @return string em
+@function tstapp-size-pc($desired-size-px, $base-size-px) {
+  @return ($desired-size-px / $base-size-px) * 100%;
+}

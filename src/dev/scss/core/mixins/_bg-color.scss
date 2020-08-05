@@ -1,0 +1,6 @@
+// Creates the font size in %
+
+@mixin tstapp-bg-rbga-color($hex, $opacity) {
+    background: $hex; /* The Fallback */
+    background: rgba($hex, $opacity);
+}

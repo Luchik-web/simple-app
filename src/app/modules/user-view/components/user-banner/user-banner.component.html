@@ -1,0 +1,20 @@
+<section *ngIf="user" class="tstapp-priv-banner" fxLayout="row" fxLayoutGap.gt-xs="20px" fxLayout.xs="column">
+    <div role="presentation" fxFlex="initial" fxLayout="column" fxLayoutAlign="center center"
+        class="tstapp-priv-banner-section">
+        <div role="img" class="tstapp-priv-banner__avatar"
+            [sharedBackgroundImage]="user.icon_url"
+            sharedBackgroundDefaulrImage="/assets/images/ui/placeholders/user-default.png"
+        ></div>
+    </div>
+    <div role="presentation" fxFlex="auto" fxLayout="column" fxLayoutAlign="center start"
+        class="tstapp-priv-banner-section">
+        <h2 class="tstapp-priv-banner__title">{{user.first_name}} {{user.last_name}}</h2>
+        <p class="tstapp-priv-banner__description">{{user.description}}</p>
+    </div>
+
+    <a  class="tstapp-priv-banner__edit"
+        routerLink="/manage/users/me"
+        attr.aria-label="edit user">
+        <mat-icon>edit</mat-icon>
+    </a>
+</section>

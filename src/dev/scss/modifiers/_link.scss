@@ -1,0 +1,58 @@
+
+/**
+ * .tstappm-color--red
+ * .tstappm-color--purple
+ */
+.tstappm-link {
+
+    &--red {
+        color: $tstappvar-color--tomato-red;
+
+        &:hover {
+            color: $tstappvar-color--tomato-red;
+        }
+    }
+    &--nowrap {
+        word-wrap: nowrap;
+    }
+
+    &--dark-grey {
+        color: $tstappvar-color--grey-charcoal;
+
+        &:hover {
+            color: $tstappvar-color--grey-medium;
+        }
+    }
+
+    &--add {
+        background-image: url(/assets/images/ui/icons/plus-squared-red.svg);
+        background-position: left center;
+        background-repeat: no-repeat;
+        background-size: 22px 22px;
+        color: #38393a;
+        font-family: $tstappvar-typography-font-family--headline;
+        font-size: 24px;
+        font-weight: normal;
+        padding-left: 28px;
+        text-transform: none;
+        text-decoration: underline;
+    }
+
+    &--go {
+        background-position: left center;
+        background-repeat: no-repeat;
+        background-size: 22px 22px;
+        color: #38393a;
+        font-family: $tstappvar-typography-font-family--headline;
+        font-size: 24px;
+        font-weight: normal;
+        padding-left: 28px;
+        text-transform: none;
+        text-decoration: underline;
+    }
+
+    &--disabled {
+        pointer-events: none;
+        cursor: default;
+    }
+}

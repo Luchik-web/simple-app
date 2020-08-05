@@ -1,0 +1,48 @@
+.tstapp-core-layout {
+    width: $tstappvar-screen--max-width;
+    max-width: $tstappvar-screen--max-width;
+    margin: 0 auto 0 auto;
+
+    &--wr {
+        padding: 0 12px;
+        @include tstapp-mixin-max-breakpoint(xs) {
+            padding: 0 5px;
+        }
+    }
+
+    &--md {
+        max-width: 598px;
+    }
+
+    @media (max-width:  $tstappvar-screen--max-width) {
+        width: 100%;
+        padding-left: 3px;
+        padding-right: 3px;
+    }
+}
+
+.tstapp-container {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.tstapp-layout-app-content {
+    height: auto !important;
+}
+
+.pac-container {
+    z-index: 1001;
+}
+
+.tstapp-download {
+    position: absolute;
+    background-color: #fff;
+    padding: 20px;
+    top: 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 200%;
+    border: black;
+    right: 0;
+    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+}

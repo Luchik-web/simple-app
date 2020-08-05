@@ -1,0 +1,10 @@
+@import "../../../../../dev/scss/core";
+@import "../../../../../dev/scss/components/form-mixins";
+@import "../../../../../dev/scss/components/alert-mixins";
+
+.tstapp-priv-alert {
+    @include tstapp-component-alert-mixin(error);
+}
+.tstapp-priv-form {
+    @include tstapp-component-form-mixin();
+}

@@ -1,0 +1,45 @@
+{
+    "editor.wordWrapColumn": 140,
+    // When opening a file, `editor.tabSize` and `editor.insertSpaces` will be detected based on the file contents.
+    "editor.detectIndentation": false,
+    // Insert spaces when pressing Tab. This setting is overridden based on the file contents when `editor.detectIndentation` is on.
+    "editor.insertSpaces": true,
+    // The number of spaces a tab is equal to. This setting is overridden based on the file contents when `editor.detectIndentation` is on.
+    "editor.tabSize": 4,
+    "editor.wordWrap": "on",
+    "files.trimTrailingWhitespace": true,
+    // Quote style
+    "javascript.preferences.quoteStyle": "single",
+    // Quote style
+    "typescript.preferences.quoteStyle": "single",
+    // Type Scrip formatter
+    "tsfmt.configPath": "./tsfmt.json",
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features",
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": true
+    },
+    // Configures if the built-in HTML language suggests HTML5 tags, properties and values.
+    "html.suggest.html5": true,
+    // path to tslint config
+    "tslint.configFile": "./tslint.json",
+    "[ruby]": {
+        "editor.formatOnSave": false,
+        "editor.formatOnPaste": false,
+        "editor.tabSize": 2
+    },
+    "ruby.format": "rubocop",
+    // If not specified searches for 'rubocop' executable available on PATH (default and recommended)
+    "ruby.rubocop.executePath": "",
+    // You can use specific path
+    // "ruby.rubocop.executePath": "/Users/you/.rbenv/shims/"
+    // "ruby.rubocop.executePath": "/Users/you/.rvm/gems/ruby-2.3.2/bin/"
+    // "ruby.rubocop.executePath": "D:/bin/Ruby22-x64/bin/"
+    // If not specified, it assumes a null value by default.
+    "ruby.rubocop.configFilePath": "/Users/luchik/Documents/vivo/vor/.rubocop.yml",
+    // default true
+    "ruby.rubocop.onSave": true,
+    "files.exclude": {
+        "**/dist/**": true
+    }
+}

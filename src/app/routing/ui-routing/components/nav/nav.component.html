@@ -1,0 +1,40 @@
+<nav class="dvgd-nav">
+    <ul class="dvgd-nav-main dvgd-nav-main--even">
+        <ng-container *ngFor="let optionsLevel1 of menuTree">
+            <li class="dvgd-nav-main__item dvgd-nav-main__item--even">
+                <ng-container *ngIf="optionsLevel1?.routerLink; else menuFirstLevelOptionsRouterLinkID">
+                    <a [routerLink]="optionsLevel1.routerLink"
+                        class="dvgd-nav-main__item-link">
+                        {{ optionsLevel1.title }}
+                    </a>
+                </ng-container>
+                <ng-template #menuFirstLevelOptionsRouterLinkID>
+                    <span role="presentation" class="dvgd-nav-main__item-text">
+                        {{ optionsLevel1.title }}
+                    </span>
+                </ng-template>
+                <ng-container *ngIf="optionsLevel1?.items?.length">
+                    <ul class="dvgd-nav-main dvgd-nav-main--odd dvgd-nav-main--sublevel dvgd-nav-main--sublevel--1">
+                    <ng-container *ngFor="let optionsLevel1 of optionsLevel1.items">
+                        <li class="dvgd-nav-main__item dvgd-nav-main__item--even dvgd-nav-main__item--sublevel dvgd-nav-main__item--sublevel--1">
+                            <ng-container *ngIf="optionsLevel1?.routerLink; else menuFirstLevelOptionsRouterLinkID">
+                                <a [routerLink]="optionsLevel1.routerLink"
+                                    class="dvgd-nav-main__item-link">
+                                    {{ optionsLevel1.title }}
+                                </a>
+                            </ng-container>
+                            <ng-template #menuFirstLevelOptionsRouterLinkID>
+                                <span role="presentation" class="dvgd-nav-main__item-text">
+                                    {{ optionsLevel1.title }}
+                                </span>
+                            </ng-template>
+                        </li>
+                    </ng-container>
+                    </ul>
+                </ng-container>
+            </li>
+        </ng-container>
+    </ul>
+</nav>
+
+

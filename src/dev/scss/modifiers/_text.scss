@@ -1,0 +1,67 @@
+
+/**
+ * .tstappm-text--center
+ * .tstappm-text--left
+ * .tstappm-text--right
+ * .tstappm-text--underline
+ * .tstappm-text--visuallyhidden
+ */
+.tstappm-text {
+    &--center {
+        text-align: center !important;
+    }
+
+    &--left {
+        text-align: left !important;
+    }
+
+    &--right {
+        text-align: right !important;
+    }
+
+    &--underline {
+        text-decoration: underline !important;
+    }
+
+    &--visuallyhidden {
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
+    &--uppercase {
+        text-transform: uppercase !important;
+    }
+
+    &--capitalize {
+        text-transform: capitalize !important;
+    }
+
+    &--align-top {
+        vertical-align: top !important;
+    }
+
+    &--highlight-red {
+        color: $tstappvar-color--tomato;
+        &:hover {
+            color: $tstappvar-color--tomato;
+        }
+    }
+    &--highlight-teal {
+        color: $tstappvar-color--teal;
+        &:hover {
+            color: $tstappvar-color--teal;
+        }
+    }
+    &--highlight-grey {
+        color: $tstappvar-color--grey-medium;
+        &:hover {
+            color: $tstappvar-color--grey-medium;
+        }
+    }
+}
