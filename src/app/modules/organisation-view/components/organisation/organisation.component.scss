@@ -1,0 +1,69 @@
+@import "../../../../../dev/scss/core";
+@import "../../../../../dev/scss/components/bg-img-mixins";
+
+.tstapp-background-title {
+    width: 100%;
+    background-size: cover;
+    background-position: center center;
+    padding: 20vh 5vw 5vh 5vw;
+
+    &__heading {
+        max-width: 50%;
+        @include tstapp-font-size(48);
+        line-height: 1.4em;
+        font-weight: 500;
+        color: $tstappvar-color--white;
+        text-transform: uppercase;
+        text-shadow: 2px 2px 4px $tstappvar-color--black;
+        @include tstapp-mixin-max-breakpoint(sm) {
+            max-width: 100%;
+            @include tstapp-font-size(36);
+        }
+    }
+}
+
+.tstapp-raised-tile {
+    padding: 15px;
+    border-color: $tstappvar-common-border-color-default;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: $tstappvar-box-shadow;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+
+    @include tstapp-mixin-max-breakpoint(sm) {
+        flex-direction: column;
+    }
+
+    &__icon {
+        background-color: $tstappvar-color--grey-light;
+        padding: 15px;
+        flex: 1 1 0;
+        @include tstapp-mixin-max-breakpoint(sm) {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__img {
+        max-width: 100%;
+        height: auto;
+        margin-top: 40px;
+        display: block;
+        @include tstapp-mixin-max-breakpoint(sm) {
+            margin-top: 0;
+        }
+    }
+
+    &__content {
+        flex: 3 1 0;
+    }
+
+    &__content-heading {
+        @include tstapp-font-size(24);
+        line-height: 1em;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+        font-weight: 500;
+    }
+}

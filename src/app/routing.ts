@@ -54,6 +54,18 @@ ROUTES.push.apply(ROUTES, [
             .then(m => m.ManageUsersRoutingModule),
     },
     {
+        path: 'organisations',
+        component: StaticLayoutComponent,
+        loadChildren: () => import('@app-routing/organisations-routing/organisations-routing.module')
+            .then(m => m.OrganisationsRoutingModule),
+    },
+    {
+        path: 'manage/organisations',
+        component: StaticLayoutComponent,
+        loadChildren: () => import('@app-routing/manage-organisations-routing/manage-organisations-routing.module')
+            .then(m => m.ManageOrganisationsRoutingModule),
+    },
+    {
         path: '',
         component: StaticLayoutComponent,
         loadChildren: () => import('@app-routing/static-routing/static-routing.module')

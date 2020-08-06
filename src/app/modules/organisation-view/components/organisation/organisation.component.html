@@ -1,0 +1,16 @@
+<div *ngIf="organisation">
+    <div class="tstapp-background-title"
+         [sharedBackgroundImage]="organisation.background_image_url"
+         sharedBackgroundDefaulrImage="/assets/images/ui/placeholders/user-default.png">
+        <h2 class="tstapp-background-title__heading">{{ organisation.name }}</h2>
+    </div>
+    <section class="tstapp-raised-tile" fxLayout="row" fxLayoutGap.gt-xs="20px" fxLayout.xs="column">
+        <div class="tstapp-raised-tile__icon">
+            <img class="tstapp-raised-tile__img" [appSharedImagesImgDefaultSrc]="organisation.icon_url" [alt]="organisation.name">
+        </div>
+        <div class="tstapp-raised-tile__content">
+            <h1 class="tstapp-raised-tile__content-heading">{{ organisation.name }}</h1>
+            <p>{{ organisation.description }}</p>
+        </div>
+    </section>
+</div>

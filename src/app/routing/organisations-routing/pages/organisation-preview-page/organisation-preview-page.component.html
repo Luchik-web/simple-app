@@ -1,0 +1,14 @@
+<section class="tstapp-core-layout">
+    <div class="tstapp-btn-cnt">
+        <button mat-btn mat-raised-button
+                color="accent" type="button"
+                [routerLink]="'/manage/organisations/' + organisation.id"
+                aria-label="Edit Organisation"
+                *ngIf="organisation">
+                <mat-icon>edit</mat-icon> Edit Organisation
+        </button>
+    </div>
+    <app-modules-organisation-view-organisation
+        [organisation]="organisation"
+    ></app-modules-organisation-view-organisation>
+</section>

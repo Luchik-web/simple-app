@@ -1,0 +1,83 @@
+<form #form name="organisationForm" fxLayout="column"
+    [formGroup]="organisationForm"
+    (ngSubmit)="onSubmitForm()"
+    class="tstapp-priv-form">
+
+    <mat-form-field floatLabel="always" appearance="outline">
+        <mat-label>Title</mat-label>
+        <input matInput formControlName="name"
+            placeholder="Enter the title" aria-label="title"
+            type="text" />
+        <mat-error *ngIf="organisationForm.get('name').invalid">
+            <span role="alert" *ngIf="organisationForm.get('name').errors?.required">
+                Title is required
+            </span>
+            <span role="alert" *ngIf="organisationForm.get('name').hasError('maxlength')">
+                Title is too long
+            </span>
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field floatLabel="always" appearance="outline">
+        <mat-label>Description</mat-label>
+        <textarea matInput name="description" formControlName="description"
+            name="description" rows="10"></textarea>
+        <mat-error *ngIf="organisationForm.get('description').invalid">
+            <span role="alert" *ngIf="organisationForm.get('description').errors?.maxlength">
+                The Description is too long
+            </span>
+        </mat-error>
+    </mat-form-field>
+
+    <div role="group" fxLayout="column" fxLayout.gt-xs="row" fxLayoutGap="20px" fxLayoutGap.xs="10px">
+        <div fxFlex="auto" role="groupcell">
+            <mat-form-field floatLabel="always" appearance="outline" fxFlex>
+                <mat-label>Icon Image URL</mat-label>
+                <input matInput formControlName="icon_url"
+                    placeholder="Enter the first name" aria-label="first name"
+                    type="text" />
+                <mat-error *ngIf="organisationForm.get('icon_url').invalid">
+                    <span role="alert" *ngIf="organisationForm.get('icon_url').errors?.required">
+                        Icon Image URL is required
+                    </span>
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <div fxFlex="auto" role="groupcell">
+            <mat-form-field floatLabel="always" appearance="outline" fxFlex>
+                <mat-label>Background Image URL</mat-label>
+                <input matInput formControlName="background_image_url"
+                    placeholder="Enter the first name" aria-label="first name"
+                    type="text" />
+                <mat-error *ngIf="organisationForm.get('background_image_url').invalid">
+                    <span role="alert" *ngIf="organisationForm.get('background_image_url').errors?.required">
+                        Background Image URL is required
+                    </span>
+                </mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <section class="tstapp-priv-alert tstapp-priv-alert--error" *ngIf="formErrors?.length">
+        <div role="alert" class="tstapp-priv-alert__title" >
+            Something was wrong...
+        </div>
+        <div role="alert" class="tstapp-priv-alert__message" >
+            <ng-container *ngFor="let option of formErrors">
+                <p>{{option}}</p>
+            </ng-container>
+        </div>
+    </section>
+
+    <div name="create" role="button"
+            fxLayout fxLayoutAlign="end center">
+        <button mat-btn mat-raised-button name="submit"
+            color="accent" type="submit" aria-label="Save organisation"
+            [disabled]="!organisationForm.dirty">
+            <ng-container *ngIf="initialData?.id; else organisationManageUserFormBtnElseID">Update</ng-container>
+            <ng-template #organisationManageUserFormBtnElseID>Create</ng-template>
+        </button>
+    </div>
+</form>
+<app-common-ui-inline-loader [loading]="loading"></app-common-ui-inline-loader>

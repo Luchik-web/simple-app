@@ -27,4 +27,22 @@ export const RouteEndPointsConfig: Array<any> = [
         'method': 'GET',
         'api_route': environment.apiUrl + '/assets/test-data/user_{{user_id}}.json'
     },
+    /**
+    * Organisations
+    */
+    {
+        'name': 'organisations.organisations.create',
+        'method': 'POST',
+        'api_route': environment.apiUrl + '/assets/test-data/organisation.json'
+    },
+    {
+        'name': 'organisations.organisations.update',
+        'method': 'PUT',
+        'api_route': environment.apiUrl + '/assets/test-data/organisation_{{id}}.json'
+    },
+    {
+        'name': 'organisations.organisations.get_by_id',
+        'method': 'GET',
+        'api_route': environment.apiUrl + '/assets/test-data/organisation_{{id}}.json'
+    },
 ];
